@@ -1,0 +1,12 @@
+num1=5
+num2=3
+suma=num1+num2
+print(num1,"+",num2,"=",suma)
+resta=num1-num2
+print(num1,"-",num2,"=",resta)
+multiplicacion=num1*num2
+print(num1,"x",num2,"=",multiplicacion)
+divicion=num1/num2
+print(num1,"/",num2,"=",divicion)
+modulo=num1 % num2
+print(num1,"%",num2,"=",modulo)
