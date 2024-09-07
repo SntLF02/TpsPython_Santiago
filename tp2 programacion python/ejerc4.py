@@ -5,141 +5,38 @@
 # de 100, 1 billete de 50, 2 billetes de 20, 1 moneda de 0.50 y una moneda de 0.05 
 # centavos. Plantee el algoritmo planteando métodos para su resolución.
 
-p200,p100,p50,p20,p10,p5,p2,p1=200,100,50,20,10,5,2,1
-c50,c25,c10,c5=0.50,0.25,0.10,0.05
-cont=0
-sumBilletes=float(0)
+monedas=["50 centavos","25 centavos","10 centavos","5 centavos","2 centavos","1 centavo"]
+valMonedas=[0.50,0.25,0.10,0.05,0.02,0.01]
 
-cantidad=float(input("Ingrese la cantidad a pagar:"))
+billetes=["200 pesos","100 pesos","50 pesos","20 pesos","10 pesos","5 pesos","2 pesos","1 peso"]
+valBilletes=[200,100,50,20,10,5,2,1]
 
-while True:
-    if sumBilletes+p200<cantidad:
-        sumBilletes+=p200
-        cont+=1
-    else:
-        break    
-if cont!=0:
-    print(f"Se necesitan {cont} billetes de 200 pesos")  
-    cont=0
-    print(sumBilletes)
+cantidad=float(input("Ingrese un precio a pagar:"))
+suma=float(0)
+cont=int(0)
 
-while True:
-    if sumBilletes+p100<cantidad:
-        sumBilletes+=p100
-        cont+=1
-    else:
-        break
-if cont!=0:
-    print(f"Se necesita {cont} billete de 100 pesos")  
-    cont=0
-    print(sumBilletes)
+for i in range(0,8):
+    while True:
+        if suma+valBilletes[i]<=cantidad:
+            suma+=valBilletes[i]
+            cont+=1
+        else:
+            break
 
-while True:
-    if sumBilletes+p50<cantidad:
-        sumBilletes+=p50
-        cont+=1
-    else:
-        break
-if cont!=0:
-    print(f"Se necesita {cont} billete de 50 pesos")  
-    cont=0
-    print(sumBilletes)
+    if cont!=0:
+        print(f"Se necesitan {cont} billetes de {billetes[i]}")  
+        cont=0
+        print(f"${suma}")
 
-while True:
-    if sumBilletes+p20<cantidad:
-        sumBilletes+=p20
-        cont+=1
-    else:
-        break
-if cont!=0:
-    print(f"Se necesitan {cont} billetes de 20 pesos")  
-    cont=0
-    print(sumBilletes)
+for j in range(0,6):
+    while True:
+        if suma+valMonedas[j]<=cantidad:
+            suma+=valMonedas[j]
+            cont+=1
+        else:
+            break
 
-while True:
-    if sumBilletes+p10<cantidad:
-        sumBilletes+=p10
-        cont+=1
-    else:
-        break
-if cont!=0:
-    print(f"Se necesita {cont} billete de 10 pesos")  
-    cont=0
-    print(sumBilletes)
-
-while True:
-    if sumBilletes+p5<cantidad:
-        sumBilletes+=p5
-        cont+=1
-    else:
-        break
-if cont!=0:    
-    print(f"Se necesita {cont} billete de 5 pesos")  
-    cont=0
-    print(sumBilletes)
-
-while True:
-    if sumBilletes+p2<cantidad:
-        sumBilletes+=p2
-        cont+=1
-    else:
-        break
-if cont!=0:
-    print(f"Se necesitan {cont} billetes de 2 pesos")  
-    cont=0
-    print(sumBilletes)
-
-while True:
-    if sumBilletes+p1<cantidad:
-        sumBilletes+=p1
-        cont+=1
-    else:
-        break
-if cont!=0:
-    print(f"Se necesita {cont} billete de 1 peso")  
-    cont=0
-    print(sumBilletes)
-#
-while True:
-    if sumBilletes+c50<cantidad:
-        sumBilletes+=c50
-        cont+=1
-    else:
-        break
-if cont!=0:
-    print(f"Se necesita {cont} moneda de 50 centavos")  
-    cont=0
-    print(sumBilletes)
-
-while True:
-    if sumBilletes+c25<cantidad:
-        sumBilletes+=c25
-        cont+=1
-    else:
-        break
-if cont!=0:
-    print(f"Se necesita {cont} monedas de 25 centavos")  
-    cont=0
-    print(sumBilletes)
-
-while True:
-    if sumBilletes+c10<cantidad:
-        sumBilletes+=c10
-        cont+=1
-    else:
-        break
-if cont!=0:
-    print(f"Se necesita {cont} moneda de 10 centavos")  
-    cont=0
-    print(sumBilletes)
-
-while True:
-    if sumBilletes<cantidad:
-        sumBilletes+=c5
-        cont+=1
-    else:
-        break
-if cont!=0:
-    print(f"Se necesita {cont} moneda de 5 centavos")  
-    cont=0
-    print(sumBilletes)
+    if cont!=0:
+        print(f"Se necesitan {cont} monedas de {monedas[j]}")  
+        cont=0
+        print(f"${suma}")
