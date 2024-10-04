@@ -13,13 +13,9 @@ def mostrar_inventario(inventario):
 
 def buscar_producto(inventario,cod):
 
-    for clave,descripcion in inventario.items():
+    print("")
+    print(f"Producto encontrado: {cod} ; Descripcion: {inventario[cod][0]}, Precio: ${inventario[cod][1]}")
 
-        if cod==clave:
-            print("")
-            print(f"Producto encontrado: {clave} ; Descripcion: {descripcion[0]}, Precio: ${descripcion[1]}")
-            break
-  
 
 def modificar_precio(inventario,cod,precio):
     inventario[cod]=(list(inventario[cod]))
@@ -43,7 +39,7 @@ def productos_por_rango_de_precio(inventario,rango1,rango2):
 
     for clave,descripcion in inventario.items():
 
-        if descripcion[1]>=rango1 and descripcion[1]<=rango2:
+        if rango1<=descripcion[1]<=rango2:
              x=True
              print(f"Clave del producto: {clave} ; Descripcion: {descripcion[0]}, Precio: ${descripcion[1]}")
 
