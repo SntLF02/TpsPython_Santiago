@@ -3,16 +3,18 @@
 # consecutivos empezando desde 1. 
 
 def matriz(filas,columnas):
+    lista=[]
     cont=1
-    
-    for i in  range (0,filas):
-        print("[",end=" ")
 
+    for i in  range (0,filas):
+        fila=[]
+       
         for j in range(0,columnas):
-            print(cont,end=" ")
+            fila.append(cont)
             cont+=1
 
-        print("]")
+        lista.append(fila)
+        print (lista[i])
 
 filas=int(input("Ingrese el numero de filas: "))
 columnas=int(input("Ingrese el numero de columnas: "))
